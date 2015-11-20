@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    width: 100%;
+    background-color: #222;
+    color: white;
+    height: 3vw;
+    line-height: 3vw;
+    text-align: center;
+}
+.main{
+    background-color: white;
+}
+.container{
+    margin: 0 15% 0 15%;
+}
+.center{
+    text-align: center;
+}
