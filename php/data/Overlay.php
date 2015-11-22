@@ -4,13 +4,14 @@ require_once 'php/data/FileManagement.php';
 require_once 'php/data/FlagStyle.php';
 require_once 'php/data/FlagColour.php';
 
-class Overlay extends FileManagement
+class Overlay
 {
     //Class variables
-    private $extension, $isImage, $flag, $width, $height, $flagStyle, $flagColour;
+    private $extension, $flag, $width, $height, $fileManagement, $flagStyle, $flagColour;
 
     public function __construct(){
 
+        $this->fileManagement = new FileManagement();
         $this->flagStyle = new FlagStyle();
         $this->flagColour = new FlagColour();
     }
@@ -18,7 +19,7 @@ class Overlay extends FileManagement
     public function overlayImage($file, $flag){
 
         ///Get the extension from the uploadFile method
-        $this->extension = strtolower($this->uploadFile($file));
+        $this->extension = strtolower($this->fileManagement->uploadFile($file));
 
         $image = $file["tmp_name"];
         $this->flag = $flag;
