@@ -64,7 +64,7 @@ class Servlet
             $file = $_FILES["image"];
 
             //Pass the file to our Overlay page to check that it is an image
-            $this->isImage = $this->facade->checkImage($file);
+            $this->isImage = $this->facade->checkIsImage($file);
 
             if($this->isImage == true){
                 $this->image = $this->facade->overlayImage($file, $flag);
