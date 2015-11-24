@@ -3,8 +3,9 @@
 require_once 'php/data/FileManagement.php';
 require_once 'php/data/FlagStyle.php';
 require_once 'php/data/FlagColour.php';
+require_once 'php/interfaces/IOverlay.php';
 
-class Overlay
+class Overlay implements IOverlay
 {
     //Class variables
     private $extension, $flag, $width, $height, $fileManagement, $flagStyle, $flagColour;
@@ -74,7 +75,7 @@ class Overlay
         return $img;
     }
 
-    private function overlayCanada($img){
+    public function overlayCanada($img){
 
         /**
          * Overlay the Canadian flag (as an image) on to the uploaded image
@@ -87,7 +88,7 @@ class Overlay
         return $img;
     }
 
-    private function overlayGermany($img){
+    public function overlayGermany($img){
 
         $colours = $this->flagColour->loadColours($img);
 
@@ -100,7 +101,7 @@ class Overlay
         return $img;
     }
 
-    private function overlayScotland($img){
+    public function overlayScotland($img){
 
         $colours = $this->flagColour->loadColours($img);
 
@@ -112,7 +113,7 @@ class Overlay
         return $img;
     }
 
-    private function overlayEngland($img){
+    public function overlayEngland($img){
 
         $colours = $this->flagColour->loadColours($img);
 
@@ -124,7 +125,7 @@ class Overlay
         return $img;
     }
 
-    private function overlayJapan($img){
+    public function overlayJapan($img){
 
         $colours = $this->flagColour->loadColours($img);
 
@@ -136,7 +137,7 @@ class Overlay
         return $img;
     }
 
-    private function overlayNetherlands($img){
+    public function overlayNetherlands($img){
 
         $colours = $this->flagColour->loadColours($img);
 
@@ -149,7 +150,7 @@ class Overlay
         return $img;
     }
 
-    private function overlayFrance($img){
+    public function overlayFrance($img){
 
         $colours = $this->flagColour->loadColours($img);
 

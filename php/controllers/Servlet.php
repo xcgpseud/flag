@@ -37,7 +37,7 @@ class Servlet
         }
 
         if($redirect)
-            require_once('./web/' . $nextPage);
+            require_once('/web/' . $nextPage);
     }
 
     private function home(){
